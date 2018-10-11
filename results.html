@@ -141,7 +141,69 @@
         <div class="wrapper">
             
             <div class="container-fluid">
+                <br><br>
+                <div class="row">
                 
+                    <div class="col-md-6">
+                        <div class="card-box">
+
+                    <table class="table">
+        
+                            <thead class="thead-light">
+                            
+                                <tr>
+                            
+                                <th scope="col">Color</th>
+                            
+                                <th scope="col">Dataset</th>
+                            
+                                </tr>
+                            
+                            </thead>
+                            
+                            <tbody>
+                            
+                                <tr>
+                            
+                                    <th scope="row">Blue</th>
+                                
+                                    <td>Social Media Data</td>
+                            
+                                </tr>
+                            
+                                <tr>
+                            
+                                    <th scope="row">Green</th>
+                                
+                                    <td>Banking Data</td>
+                            
+                                </tr>
+                            
+                                <tr>
+                            
+                                    <th scope="row">Yellow</th>
+                                
+                                    <td>Banking Data</td>
+                            
+                                </tr>
+            
+                                
+                            </tbody>
+                            
+                            </table>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card-box">
+                            <p style="font-size: 14px;">Credit Worthiness Distribution Based On 3 Datasets</p><br><br>
+        
+                            <canvas style="align-content: center;" id="mycanvas" width="256" height="256"></canvas>
+                        </div>
+                    </div>
+                
+                </div>
                 
             </div> <!-- end container -->
         </div>
@@ -167,6 +229,40 @@
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery.slimscroll.js"></script>
 
+        <script>
+            $(document).ready(function(){
+                var ctx = $("#mycanvas").get(0).getContext("2d");
+        
+                //pie chart data
+                //sum of values = 360
+                var data = [
+                {
+                    value: 180,
+                    color: "cornflowerblue",
+                    highlight: "lightskyblue",
+                    label: "Venue"
+                },
+                {
+                    value: 90,
+                    color: "lightgreen",
+                    highlight: "yellowgreen",
+                    label: "Decor"
+                },
+                {
+                    value: 40,
+                    color: "orange",
+                    highlight: "darkorange",
+                    label: "Photographer"
+                },
+                
+                ];
+                        
+                        
+        
+                //draw
+                var piechart = new Chart(ctx).Pie(data);
+            });
+        </script>
 
     </body>
 
